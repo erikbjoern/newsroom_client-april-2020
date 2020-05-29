@@ -1,12 +1,11 @@
 .payment-container {
-  height: 60vh;
   width: 100vw;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 #payment-interface {
+  margin-top: 30px;
   background-color: #409d9b;
 }
 

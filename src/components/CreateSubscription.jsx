@@ -16,37 +16,36 @@ const CreateSubscription = (props) => {
   const [cardNumber, setCardNumber] = useState(false);
   const [cardExpiry, setCardExpiry] = useState(false);
   const [cardCvc, setCardCvc] = useState(false);
-  const [radioButton, setRadioButton] = useState(false);
+  const [radioButton, setRadioButton] = useState("");
 
   const onChangeHandler = async (e) => {
     if (e.elementType === "cardNumber") {
-      e.complete ? setCardNumber(true) : setCardNumber(false)
+      // I hit this debugger when making changes to the cardNumber element.
+      // When adding the last digit to the element, e.complete turns to true.
+      debugger
+      setCardNumber(e.complete)
+      // But when I hit this debugger, cardNumber is still false.
+      debugger
+    } else if (e.elementType === "cardExpiry") {
+      debugger
+      setCardExpiry(e.complete)
+    } else if (e.elementType === "cardCvc") {
+      debugger
+      setCardCvc(e.complete)
+    } else {
+      // I hit this debugger when checking a radio button
+      debugger
+      setRadioButton(e.target.value)
+      // But even here, it doesn't set state, even though e.target.value === "monthly"
       debugger
     }
-    if (e.elementType === "cardExpiry") {
-      e.complete ? setCardExpiry(true) : setCardExpiry(false)
-      debugger
-    }
-    if (e.elementType === "cardCvc" && e.complete === true) {
-        setCardCvc(true)
-        debugger
-    if (e.elementType === "cardCvc" && e.complete === false) {
-      setCardCvc(false)
-      debugger
-    }
-      }
-      debugger
-      const card = cardCvc
-      debugger
-    }
-    else {
-      setRadioButton(true)
-    }
-    debugger
+  }
+
+  const enableSubmit = () => {
+    return (cardNumber && cardExpiry && cardCvc && radioButton) ? false : true
   }
 
   const submitPayment = async (e) => {
-    debugger
     const stripeResponse = await props.stripe.createToken();
 
     try {
@@ -85,7 +84,7 @@ const CreateSubscription = (props) => {
                   id="monthly"
                   name="option"
                   value="monthly"
-                  onChange={onChangeHandler}
+                  onClick={onChangeHandler}
                 ></Input>
                 <label htmlFor="monthly">1 Month for only <strong>$10!</strong></label>
               </Grid.Column>
@@ -95,7 +94,7 @@ const CreateSubscription = (props) => {
                   id="yearly"
                   name="option"
                   value="yearly"
-                  onChange={onChangeHandler}
+                  onClick={onChangeHandler}
                 ></Input>
                 <label htmlFor="yearly">12 Months for only <strong>$80!</strong></label>
               </Grid.Column>
@@ -125,7 +124,7 @@ const CreateSubscription = (props) => {
             </Grid.Row>
           </Grid>
           <div className="button-div">
-            <Button basic inverted onClick={submitPayment}>
+            <Button disabled={enableSubmit} basic inverted onClick={submitPayment}>
               Confirm Payment
             </Button>
           </div>
