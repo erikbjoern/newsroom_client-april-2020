@@ -1,7 +1,9 @@
 .article-title {
   position: absolute;
   bottom: 40px;
-  margin-left: 40px;
+  background-color: rgba(0,0,0,0.4);
+  padding: 7px;
+  padding-left: 40px;
 }
 
 .article-body {
