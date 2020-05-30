@@ -37,7 +37,7 @@ const Navbar = () => {
       >
         <Menu.Item>
           <NavLink to="/">
-            <span id="logo">DNS</span>
+            <h1 id="logo">DNS</h1>
           </NavLink>
         </Menu.Item>
         {renderCategories}

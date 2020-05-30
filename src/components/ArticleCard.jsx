@@ -1,8 +1,9 @@
 import React from "react";
-import { Placeholder, Grid } from "semantic-ui-react";
+import { Placeholder, Grid, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 const ArticleCard = ({ article }) => {
+  debugger
   return (
     <Grid.Row width={3} centered>
       <Link
@@ -12,13 +13,10 @@ const ArticleCard = ({ article }) => {
         key={article.id}
         id={"article-" + article.id}
       > 
-        <Placeholder>
-          <Placeholder.Image 
+        <Image src={article.image}
             style={{ height: 200, width: 400 }}
-          >
+         />
             <h5 className="article-title">{article.title}</h5>
-          </Placeholder.Image>
-        </Placeholder>
       </Link>
     </Grid.Row>
   );

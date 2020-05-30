@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Placeholder, Grid, Container } from "semantic-ui-react";
+import { Placeholder, Grid, Container, Image } from "semantic-ui-react";
 import axios from "axios";
 import Ad from "./Ad";
 import mercedesImg from "../images/mercedesAd.jpg";
@@ -16,25 +16,26 @@ const SingleArticle = (props) => {
     const chooseArticle = async () => {
       let response = await axios.get(`/articles/${id}`);
       setArticle(response.data.article);
+      debugger
     };
     chooseArticle();
   },[]);
+  debugger
 
   return (
     <Container align="center" style={{ paddingTop: "45px", width: "55%" }}>
       <Grid stretched>
         <Grid.Row centered>
-          <Placeholder>
-            <Placeholder.Image 
-              style={{ height: 200, width: 400, textAlign: "left" }}
+          <div className="lefty">
+            <Image src={article.image}
+              style={{ height: 400, width: 800 }}
               key={article.id}
               id={"article-" + article.id + "-title"}
-            >
+              />
               <h5 className="article-title">{article.title}</h5>
-            </Placeholder.Image>
-          </Placeholder>
+            </div>
         </Grid.Row>
-        <Grid.Row centered>
+        <Grid.Row centered >
           <p
             key={article.id}
             id={"article-" + article.id + "-date"}
