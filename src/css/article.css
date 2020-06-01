@@ -1,7 +1,7 @@
 .article-title {
   position: absolute;
-  bottom: 40px;
-  background-color: rgba(0,0,0,0.4);
+  bottom: 30px;
+  background-color: rgba(0,0,0,0.44);
   padding: 7px;
   padding-left: 40px;
 }
@@ -10,8 +10,18 @@
   text-align: justify !important;
   word-wrap: normal;
   font-size: 18px;
+  color: #444444;
 }
 
-.lefty {
+.title-image {
   text-align: left;
+}
+
+.title-image > * {
+  font-size: 160%
+}
+
+.published-at {
+  font-size: 130%;
+  color: #888888
 }

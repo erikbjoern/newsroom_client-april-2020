@@ -3,7 +3,6 @@ import { Grid, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 const ArticleCard = ({ article }) => {
-  debugger
   return (
     <Grid.Row width={3} centered>
       <Link

@@ -8,7 +8,7 @@ import { BrowserRouter } from "react-router-dom";
 import { StripeProvider } from 'react-stripe-elements'
 import "./css/index.css";
 
-axios.defaults.baseURL = "https://dailynewssense-api.herokuapp.com/api";
+axios.defaults.baseURL = "http://localhost:3000/api";
 
 ReactDOM.render(
   <StripeProvider apiKey="pk_test_21nBNjeqdyB1Mzm2VjDPQprF00kyEKYZSK">

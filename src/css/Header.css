@@ -3,21 +3,6 @@
 
 
 
-a {
-  color: white;
-  font-family: "Quattrocento", serif;
-  font-size: 1.2vw;
-}
-
-@media only screen and (max-width: 768px){
-  #logo {
-    font-size: 60px;
-  }
-
-  a {
-    font-size: 100%
-  }
-}
 span {
   font-family: "Cinzel Decorative", cursive;
   color: white;
@@ -54,7 +39,6 @@ a {
 #login {
   font-family: "Quattrocento", serif;
   font-weight: bold;
-  margin-right: 30px;
 }
 
 #navbar {
@@ -62,7 +46,18 @@ a {
   font-size: 2vw;
 }
 
-#header {
-  padding: 20px;
+#head {
   background-color: #409d9b;
+  margin: 0 !important;
+}
+
+#welcome-and-logout {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#welcome-and-logout > p {
+  color: white !important;
+  text-align: right;
+  margin-right: 10px;
 }

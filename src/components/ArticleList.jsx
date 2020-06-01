@@ -18,7 +18,6 @@ const ArticleList = (props) => {
       try {
         const response = await axios.get("/articles");
         setArticleList(response.data.articles);
-        debugger
       } catch (error) {
         console.log(error);
       }
