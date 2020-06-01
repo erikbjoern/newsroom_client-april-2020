@@ -9,5 +9,10 @@
 #logo {
   font-family: "Cinzel Decorative", cursive;
   color: white;
-  font-size: 3vw;
+  font-size: 2vw;
+}
+
+#navbar {
+  font-family: "Quattrocento", serif;
+  font-size: 1.2vw;
 }
