@@ -2,11 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@450&family=Quattrocento:wght@700&display=swap");
 
 
-#logo {
-  font-family: "Cinzel Decorative", cursive;
-  color: white;
-  font-size: 3vw;
-}
 
 a {
   color: white;
@@ -51,10 +46,10 @@ p {
   font-family: "EB Garamond", serif;
 }
 
-.the-header {
-  background-color: #409d9b;
+a {
+  color: white;
+  font-family: "Quattrocento", serif;
 }
-
 
 #login {
   font-family: "Quattrocento", serif;
@@ -64,10 +59,10 @@ p {
 
 #navbar {
   font-family: "Quattrocento", serif;
-  font-size: 20px;
+  font-size: 2vw;
 }
 
 #header {
-  margin-top: 30px;
+  padding: 20px;
   background-color: #409d9b;
 }

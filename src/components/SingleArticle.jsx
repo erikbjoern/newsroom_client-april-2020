@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from "react";
+<<<<<<< HEAD
 import { Placeholder, Grid, Container, Image } from "semantic-ui-react";
+=======
+import { Grid, Container, Image } from "semantic-ui-react";
+>>>>>>> 416c22dbfcdfabd0e3a74d538a9a6581ebc226f4
 import axios from "axios";
 import Ad from "./Ad";
 import mercedesImg from "../images/mercedesAd.jpg";
-import PremiumBlocker from "./PremiumBlocker"
+import PremiumBlocker from "./PremiumBlocker";
 import { useParams } from "react-router-dom";
 import '../css/article.css'
+import { useTranslation } from "react-i18next";
 
 
 const SingleArticle = (props) => {
   const [article, setArticle] = useState({});
   const { id } = useParams();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const chooseArticle = async () => {
@@ -19,21 +25,28 @@ const SingleArticle = (props) => {
       debugger
     };
     chooseArticle();
+<<<<<<< HEAD
   },[]);
   debugger
+=======
+  }, []);
+>>>>>>> 416c22dbfcdfabd0e3a74d538a9a6581ebc226f4
 
   return (
     <Container align="center" style={{ paddingTop: "45px", width: "55%" }}>
       <Grid stretched>
         <Grid.Row centered>
-          <div className="lefty">
-            <Image src={article.image}
-              style={{ height: 400, width: 800 }}
-              key={article.id}
-              id={"article-" + article.id + "-title"}
-              />
-              <h5 className="article-title">{article.title}</h5>
-            </div>
+          <Image
+            src={article.image}
+            style={{ height: 200, width: 400, textAlign: "left" }}
+          />
+          <h5
+            key={article.id}
+            id={"article-" + article.id + "-title"}
+            className="article-title"
+          >
+            {article.title}
+          </h5>
         </Grid.Row>
         <Grid.Row centered >
           <p
@@ -41,7 +54,7 @@ const SingleArticle = (props) => {
             id={"article-" + article.id + "-date"}
             style={{ textAlign: "left" }}
           >
-            Published at: {article.published_at}
+            {t('Published at:')} {article.published_at}
           </p>
         </Grid.Row>
         <Grid.Row centered>

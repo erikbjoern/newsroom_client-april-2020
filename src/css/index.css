@@ -19,7 +19,8 @@ p {
   height: 80vh;
 }
 
-#login-form {
+#login-form,
+#signup-form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -31,5 +32,5 @@ p {
 }
 
 #login-form > * {
-  margin: 1px
+  margin: 1px;
 }
