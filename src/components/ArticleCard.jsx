@@ -17,7 +17,7 @@ const ArticleCard = ({ article, size, margin }) => {
   debugger
 
   return (
-    <Container align="left" style={{height: `${200 * size}px`, width: `${400 * size}px`, marginBottom: 15 * margin, marginLeft: 15 * margin}}>
+    <Container align="left" style={{height: `${225 * size}px`, width: `${450 * size}px`, marginBottom: 5 * margin, marginLeft: 5 * margin}}>
       <Link
         onClick={setActiveArticle}
         to={{
@@ -28,9 +28,9 @@ const ArticleCard = ({ article, size, margin }) => {
       >
         <Image
           src={article.image}
-          style={{ height: `${200 * size}px`, width: `${400 * size}px`}}
+          style={{ height: `${225 * size}px`, width: `${450 * size}px`}}
         />
-        <h5 className="article-title">{article.title}</h5>
+        <h5 style={{fontSize: 17 * size}} className="article-title">{article.title}</h5>
       </Link>
     </Container>
   );

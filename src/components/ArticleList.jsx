@@ -45,8 +45,8 @@ const ArticleList = (props) => {
     while (i < (filtered.length - 8)) {
       debugger
       articleCards.push(
-        <Grid.Row columns={10}>
-          <Grid.Column width={4}>
+        <Grid.Row style={{padding: 0, margin: 1}}>
+          <Grid.Column stretched style={{padding: 0, margin: 0, width: "fit-content"}}>
             <Grid.Row>
               <ArticleCard article={filtered[i]} size={1} margin={2}/>
             </Grid.Row>
@@ -54,12 +54,12 @@ const ArticleList = (props) => {
               <ArticleCard article={filtered[i+1]} size={1} margin={2}/>
             </Grid.Row>
           </Grid.Column>
-          <Grid.Column width={3}>
+          <Grid.Column width={3} style={{padding: 0, marginLeft: 5, width: "fit-content"}}>
             <ArticleCard article={filtered[i+2]} size={2/3} margin={1}/>
             <ArticleCard article={filtered[i+3]} size={2/3} margin={1}/>
             <ArticleCard article={filtered[i+4]} size={2/3} margin={1}/>
           </Grid.Column>
-          <Grid.Column width={3}>
+          <Grid.Column width={3} style={{padding: 0, marginLeft: 5, width: "fit-content"}}>
             <ArticleCard article={filtered[i+5]} size={2/3} margin={1}/>
             <ArticleCard article={filtered[i+6]} size={2/3} margin={1}/>
             <ArticleCard article={filtered[i+7]} size={2/3} margin={1}/>
@@ -74,8 +74,8 @@ const ArticleList = (props) => {
   debugger
 
   return (
-    <>
-    <Container align="center" style={{position: "relative", width: "100%"}}>
+    <Container align="center" style={{width: "100%"}}>
+    <Container align="center" style={{width: "100%", paddingTop: "10px"}}>
       <Ad
         link={"https://www.mercedes-benz.com/en/"}
         id={"ad-1"}
@@ -95,7 +95,7 @@ const ArticleList = (props) => {
         alt={"mercedes"}
       />
     </Container>
-    <Grid centered>
+    <Grid centered fluid stackable style={{marginTop: "50px", maxWidth:"80%", minWidth: "1100px"}}>
       {buildArticleCards()}
     </Grid>
       <Ad
@@ -104,7 +104,7 @@ const ArticleList = (props) => {
         img={lagavulinImg}
         alt={"lagavulin"}
       />
-    </>
+    </Container>
   );
 };
 
