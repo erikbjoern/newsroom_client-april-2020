@@ -3,7 +3,8 @@ import { Container, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-const ArticleCard = ({ article, size }) => {
+const ArticleCard = ({ article, size, margin }) => {
+  debugger
   const dispatch = useDispatch();
 
   const setActiveArticle = () => {
@@ -13,8 +14,10 @@ const ArticleCard = ({ article, size }) => {
     });
   };
 
+  debugger
+
   return (
-    <Container align="left" style={{height: `${200 * size}px`, width: `${400 * size}px`, marginBottom: 30 * size, marginLeft: 30}}>
+    <Container align="left" style={{height: `${200 * size}px`, width: `${400 * size}px`, marginBottom: 15 * margin, marginLeft: 15 * margin}}>
       <Link
         onClick={setActiveArticle}
         to={{

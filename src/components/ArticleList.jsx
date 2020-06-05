@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Container} from "semantic-ui-react";
+import { Grid, Container } from "semantic-ui-react";
 import ArticleCard from "../components/ArticleCard";
 import Ad from "./Ad";
 import mercedesImg from "../images/mercedesAd.jpg";
@@ -38,44 +38,44 @@ const ArticleList = (props) => {
     }
   };
 
-  const bigArticleCards = filteredArticles().slice(0,4).map((article) => {
-    return <ArticleCard article={article} size={1}/>;
-  });
+  const buildArticleCards = () => {
+    let articleCards = []
+    let i = 0
+    let filtered = filteredArticles()
+    while (i < (filtered.length - 8)) {
+      debugger
+      articleCards.push(
+        <Grid.Row columns={10}>
+          <Grid.Column width={4}>
+            <Grid.Row>
+              <ArticleCard article={filtered[i]} size={1} margin={2}/>
+            </Grid.Row>
+            <Grid.Row>
+              <ArticleCard article={filtered[i+1]} size={1} margin={2}/>
+            </Grid.Row>
+          </Grid.Column>
+          <Grid.Column width={3}>
+            <ArticleCard article={filtered[i+2]} size={2/3} margin={1}/>
+            <ArticleCard article={filtered[i+3]} size={2/3} margin={1}/>
+            <ArticleCard article={filtered[i+4]} size={2/3} margin={1}/>
+          </Grid.Column>
+          <Grid.Column width={3}>
+            <ArticleCard article={filtered[i+5]} size={2/3} margin={1}/>
+            <ArticleCard article={filtered[i+6]} size={2/3} margin={1}/>
+            <ArticleCard article={filtered[i+7]} size={2/3} margin={1}/>
+          </Grid.Column>
+        </Grid.Row>
+      )
+    i += 6
+    }
+    return articleCards.reverse()
+  };
 
-  const smallArticleCards = filteredArticles().slice(4,20).map((article) => {
-    return <ArticleCard article={article} size={2/3}/>
-  })
-
-  // const smallArticleCardsList = () => {
-  //   for (let i = 0; i < smallArticleCards.length ; i+=4) {
-  //     return (
-  //       <Grid.Row>
-  //         <Grid.Row>
-  //           <Grid.Column>
-  //             {smallArticleCards[i]}
-  //           </Grid.Column>
-  //           <Grid.Column>
-  //             {smallArticleCards[i+1]}
-  //           </Grid.Column>
-  //         </Grid.Row>
-  //         <Grid.Row>
-  //           <Grid.Column>
-  //             {smallArticleCards[i+2]}
-  //           </Grid.Column>
-  //           <Grid.Column>
-  //             {smallArticleCards[i+3]}
-  //           </Grid.Column>
-  //         </Grid.Row>
-  //       </Grid.Row>
-  //     )
-  //   }
-  // }
+  debugger
 
   return (
     <>
-    <Container 
-  
-  align="center" style={{position: "relative", width: "100%"}}>
+    <Container align="center" style={{position: "relative", width: "100%"}}>
       <Ad
         link={"https://www.mercedes-benz.com/en/"}
         id={"ad-1"}
@@ -95,20 +95,15 @@ const ArticleList = (props) => {
         alt={"mercedes"}
       />
     </Container>
-    <Container id="articleCards" style={{width: "80%", paddingTop: "40px", display: "flex", flexDirection: "row", justifyContent: "center"}}>
-      <Container align="center">
-        {bigArticleCards}
-        <Ad
-          link={"https://www.malts.com/en-gb/visit-our-distilleries/lagavulin/"}
-          id={"ad-2"}
-          img={lagavulinImg}
-          alt={"lagavulin"}
-        />
-      </Container>
-      <Container style={{width: "120%", display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "space-between"}}>
-        {smallArticleCards}
-      </Container>
-    </Container>
+    <Grid centered>
+      {buildArticleCards()}
+    </Grid>
+      <Ad
+        link={"https://www.malts.com/en-gb/visit-our-distilleries/lagavulin/"}
+        id={"ad-2"}
+        img={lagavulinImg}
+        alt={"lagavulin"}
+      />
     </>
   );
 };
