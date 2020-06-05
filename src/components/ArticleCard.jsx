@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Image } from "semantic-ui-react";
+import { Container, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
@@ -14,7 +14,7 @@ const ArticleCard = ({ article, size }) => {
   };
 
   return (
-    <Grid.Row centered>
+    <Container align="left" style={{height: `${200 * size}px`, width: `${400 * size}px`, marginBottom: 30 * size, marginLeft: 30}}>
       <Link
         onClick={setActiveArticle}
         to={{
@@ -25,12 +25,11 @@ const ArticleCard = ({ article, size }) => {
       >
         <Image
           src={article.image}
-          wrapped
-          style={{ height: 200 * size, width: 400 * size }}
+          style={{ height: `${200 * size}px`, width: `${400 * size}px`}}
         />
         <h5 className="article-title">{article.title}</h5>
       </Link>
-    </Grid.Row>
+    </Container>
   );
 };
 

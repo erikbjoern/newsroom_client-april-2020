@@ -1,9 +1,12 @@
 .article-title {
-  position: absolute;
-  bottom: 30px;
+  position: relative;
+  bottom: 80px;
   background-color: rgba(0,0,0,0.44);
   padding: 7px;
   padding-left: 40px;
+  width: fit-content;
+  max-width: inherit;
+  word-wrap: break-word;
 }
 
 .article-body {
