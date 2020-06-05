@@ -38,20 +38,54 @@ const ArticleList = (props) => {
     }
   };
 
-  let articleCards = filteredArticles().map((article) => {
-    return <ArticleCard article={article} />;
+  const bigArticleCards = filteredArticles().slice(0,4).map((article) => {
+    return <ArticleCard article={article} size={1}/>;
   });
+
+  const smallArticleCards = filteredArticles().slice(4,20).map((article) => {
+    return <ArticleCard article={article} size={0.5}/>
+  })
+
+  const smallArticleCardsList = () => {
+    for (let i = 0; i < smallArticleCards.length ; i+=4) {
+      return (
+        <Grid.Row>
+          <Grid.Row>
+            <Grid.Column>
+              {smallArticleCards[i]}
+            </Grid.Column>
+            <Grid.Column>
+              {smallArticleCards[i+1]}
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column>
+              {smallArticleCards[i+2]}
+            </Grid.Column>
+            <Grid.Column>
+              {smallArticleCards[i+3]}
+            </Grid.Column>
+          </Grid.Row>
+        </Grid.Row>
+      )
+    }
+  }
 
   return (
     <div>
-      <Grid fluid columns={3} divided centered>
+      <Grid fluid columns="equal" divided centered>
         <Ad
           link={"https://www.mercedes-benz.com/en/"}
           id={"ad-1"}
           img={mercedesImg}
           alt={"mercedes"}
         />
-        {articleCards}
+        <Grid.Column>
+          {bigArticleCards}
+        </Grid.Column>
+        <Grid.Column>
+          {smallArticleCardsList}
+        </Grid.Column>
         <Ad
           link={"https://www.malts.com/en-gb/visit-our-distilleries/lagavulin/"}
           id={"ad-2"}
