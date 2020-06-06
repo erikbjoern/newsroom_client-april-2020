@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import "../css/index.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useSelector } from 'react-redux'
 
 const LoginForm = (props) => {
   const [errorMessage, setErrorMessage] = useState("");
@@ -25,7 +26,7 @@ const LoginForm = (props) => {
         history.goBack();
       }
     } catch (error) {
-      setMessage(error.response.data.errors[0]);
+      setErrorMessage(error.response.data.errors[0]);
     }
   };
   const signUp_message =
