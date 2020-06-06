@@ -3,8 +3,9 @@ import { Container, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-const ArticleCard = ({ article, size, margin }) => {
+const ArticleCard = ({ articleProp, size, margin }) => {
   debugger
+  const article = articleProp ? articleProp : {}
   const dispatch = useDispatch();
 
   const setActiveArticle = () => {
