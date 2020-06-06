@@ -48,7 +48,7 @@ const ArticleList = (props) => {
         <Grid.Row style={{padding: 0, margin: 1}}>
           <Grid.Column stretched style={{padding: 0, margin: 0, width: "fit-content"}}>
             <Grid.Row>
-              <ArticleCard article={filtered[i]} size={1} margin={2}/>
+              <ArticleCard  article={filtered[i]} size={1} margin={2}/>
             </Grid.Row>
             <Grid.Row>
               <ArticleCard article={filtered[i+1]} size={1} margin={2}/>
@@ -82,7 +82,7 @@ const ArticleList = (props) => {
         img={mercedesImg}
         alt={"mercedes"}
       />
-      <Ad
+      {/* <Ad
         link={"https://www.mercedes-benz.com/en/"}
         id={"ad-1"}
         img={mercedesImg}
@@ -93,9 +93,9 @@ const ArticleList = (props) => {
         id={"ad-1"}
         img={mercedesImg}
         alt={"mercedes"}
-      />
+      /> */}
     </Container>
-    <Grid centered fluid stackable style={{marginTop: "50px", maxWidth:"80%", minWidth: "1100px"}}>
+    <Grid id="article-cards" centered fluid stackable style={{marginTop: "50px", maxWidth:"80%", minWidth: "1100px"}}>
       {buildArticleCards()}
     </Grid>
       <Ad

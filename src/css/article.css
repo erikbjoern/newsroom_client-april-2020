@@ -16,13 +16,10 @@
   color: #444444;
 }
 
-.title-image {
-  text-align: left;
+#article-cards > * > * :hover {
+  transform: scale(1.007);
+  transition: 0.1s;
 }
-
-/* .title-image > * {
-  font-size: 160%
-} */
 
 .published-at {
   font-size: 130%;
