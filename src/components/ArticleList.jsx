@@ -103,7 +103,7 @@ const ArticleList = (props) => {
         stackable
         style={{ marginTop: "50px", maxWidth: "80%", minWidth: "1100px" }}
       >
-        {buildArticleCards()}
+        {buildArticleCards().reverse()}
       </Grid>
       <Ad
         link={"https://www.malts.com/en-gb/visit-our-distilleries/lagavulin/"}
