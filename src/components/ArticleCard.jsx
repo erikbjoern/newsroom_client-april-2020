@@ -14,8 +14,6 @@ const ArticleCard = ({ article, size, margin }) => {
     });
   };
 
-  debugger
-
   return (
     <Container
       align="left" style={{height: `${225 * size}px`, width: `${450 * size}px`, marginBottom: 5 * margin, marginLeft: 5 * margin}}>

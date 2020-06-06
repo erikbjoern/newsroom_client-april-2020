@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { Grid, Button, Form, Input } from "semantic-ui-react";
-import auth from "../modules/auth";
+import { auth } from "../modules/auth";
 import { useHistory } from "react-router-dom";
 import "../css/index.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const LoginForm = (props) => {
-  const [message, setMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const signupMessage = useSelector((state) => state.messages.signupMessage);
   const history = useHistory();
   const { t } = useTranslation();
 
@@ -17,6 +18,7 @@ const LoginForm = (props) => {
         e.target.email.value,
         e.target.password.value
       );
+
       if (response.success) {
         props.setUid(response.data.uid);
         props.setAuthenticated(true);
@@ -41,7 +43,9 @@ const LoginForm = (props) => {
     <>
       <Grid className="login-container" verticalAlign="middle">
         <Grid.Column align="center">
-          <h3 id="error-message">{message}</h3>
+          <h3 style={{ color: "black" }} id="error-message">
+            {errorMessage}
+          </h3>
           <Form unstackable id="login-form" onSubmit={login}>
             <h1>{t('Log in')}</h1>
             <h4>{t('Email')}</h4>

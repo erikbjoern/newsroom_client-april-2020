@@ -1,5 +1,8 @@
 const initialState = {
-  activeArticle: {}
+  activeArticle: {},
+  city: "",
+  country: "",
+  signupMessage: "",
 };
 
 export default initialState;

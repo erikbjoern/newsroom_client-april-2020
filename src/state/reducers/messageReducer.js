@@ -1,8 +1,8 @@
 import initialState from "../store/initialState";
 
-const rootReducers = (state = initialState, action) => {
+const messageReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "SIGNUP_MESSAGE":
+    case "SET_SIGNUP_MESSAGE":
       return {
         ...state,
         signupMessage: action.payload.signupMessage,
@@ -11,5 +11,4 @@ const rootReducers = (state = initialState, action) => {
       return state;
   }
 };
-
-export default rootReducers;
+export default messageReducer;
