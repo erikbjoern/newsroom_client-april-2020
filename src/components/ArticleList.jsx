@@ -36,10 +36,8 @@ const ArticleList = (props) => {
   const buildArticleCards = () => {
     const articleCards = [];
     const filtered = filteredArticles();
-    debugger
     let i = 0;
     while (i < filtered.length) {
-      debugger;
       articleCards.push(
         <Grid.Row style={{ padding: 0, margin: 1 }}>
           <Grid.Column

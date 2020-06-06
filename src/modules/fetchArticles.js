@@ -1,7 +1,6 @@
 import axios from 'axios'
 
 const fetchArticleList = async ({dispatch, location}) => {
-  debugger
   try {
     const response = await axios.get("/articles", { location: location });
     dispatch({

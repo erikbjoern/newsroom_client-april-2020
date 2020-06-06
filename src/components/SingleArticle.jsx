@@ -15,6 +15,7 @@ const SingleArticle = (props) => {
   const { id } = useParams();
   const { t } = useTranslation();
   const article = useSelector( state => state.articles.activeArticle );
+  const articleList = useSelector( state => state.articles.articleList );
 
   const chooseArticle = async () => {
     try {
@@ -29,10 +30,22 @@ const SingleArticle = (props) => {
     chooseArticle()
   }, []);
 
+  const smallArticles = () => {
+    const randomArticles = []
+    for (let i = 0; i < 10; i++) {
+      const randomArticle = articleList[Math.floor(Math.random() * articleList.length)]
+      randomArticles.push(<ArticleCard articleProp={randomArticle} size={0.5} margin={1}/>)
+    }
+    return randomArticles
+  }
+
   return (
-    <Container align="center" style={{ paddingTop: "45px", width: "55%" }}>
-      <Grid stretched>
-        <ArticleCard article={article} size={2}/>
+    <Container align="center" style={{ paddingTop: "45px", width: "75%" }}>
+      <Grid>
+        <Grid.Column width={12}>
+          <Grid.Row>
+            <ArticleCard articleProp={article} size={2}/>
+          </Grid.Row>
         <Grid.Row centered>
           <p
             key={article.id}
@@ -61,6 +74,10 @@ const SingleArticle = (props) => {
             alt={"mercedes"}
           />
         </Grid.Row>
+        </Grid.Column>
+        <Grid.Column width={4}>
+          {smallArticles()}
+        </Grid.Column>
       </Grid>
     </Container>
   );

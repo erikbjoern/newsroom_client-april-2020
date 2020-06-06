@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 const ArticleCard = ({ articleProp, size, margin }) => {
-  debugger
   const article = articleProp ? articleProp : {}
   const dispatch = useDispatch();
 
@@ -30,7 +29,7 @@ const ArticleCard = ({ articleProp, size, margin }) => {
           src={article.image}
           style={{ height: `${225 * size}px`, width: `${450 * size}px`}}
         />
-        <h5 style={{fontSize: 17 * size}} className="article-title">{article.title}</h5>
+        <h5 style={{fontSize: size < 1 ? 15 : 20 * size, bottom: size < 1 ? 80 : 100}} className="article-title">{article.title}</h5>
       </Link>
     </Container>
   );
