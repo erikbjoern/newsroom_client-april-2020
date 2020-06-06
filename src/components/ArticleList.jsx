@@ -6,7 +6,7 @@ import mercedesImg from "../images/mercedesAd.jpg";
 import lagavulinImg from "../images/lagavulinAd.jpg";
 import "../css/article.css";
 import { useSelector, useDispatch } from "react-redux";
-import fetchArticleList from '../modules/fetchArticles'
+import { fetchArticleList } from '../modules/fetchArticles'
 
 const ArticleList = (props) => {
   const articleList = useSelector((state) => state.articles.articleList);

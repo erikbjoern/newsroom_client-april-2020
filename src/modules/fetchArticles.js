@@ -12,4 +12,16 @@ const fetchArticleList = async ({dispatch, location}) => {
   }
 };
 
-export default fetchArticleList
+const fetchSingleArticle = async ({dispatch, id}) => {
+  try {
+    const response = await axios.get(`/articles/${id}`);
+    dispatch({ 
+      type: "SET_ACTIVE_ARTICLE", 
+      payload: response.data.article 
+    });
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export { fetchArticleList, fetchSingleArticle }
