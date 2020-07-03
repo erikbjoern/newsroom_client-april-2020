@@ -1,0 +1,47 @@
+#language {
+  padding-left: 10px;
+}
+
+span {
+  font-family: "Cinzel Decorative", cursive;
+  color: white;
+}
+
+h3 {
+  font-family: "Quattrocento", serif;
+  color: black;
+}
+
+p {
+  font-family: "EB Garamond", serif;
+}
+
+#login {
+  font-family: "Quattrocento", serif;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: right;
+}
+
+#login > * {
+  padding-right: 10px;
+}
+
+#header {
+  padding: 10px;
+  font-family: "Quattrocento", serif;
+  font-size: 3vw;
+  text-align: center;
+}
+
+#head {
+  background-color: #409d9b;
+}
+
+#head > * {
+  display: flex;
+  align-items: center;
+}
