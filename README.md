@@ -1,4 +1,6 @@
-This is the mid-course project of the Craft Academy bootcamp
+## This is the mid-course project of the Craft Academy bootcamp
+
+The objective was to create a news platform that allow for the staff to create, review and publish news, and for users to browse both local and international news. The user facing site also features live weather, ads, ability to become a subscriber to access more content, choosing between english and swedish UI language and browsing news by categories such as "economy" and "latest news".
 
 Visit the [live website](http://dailynewssense.netlify.app) or clone the repo to see the app in action.
 
