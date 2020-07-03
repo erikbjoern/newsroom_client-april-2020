@@ -1,6 +1,18 @@
+# Daily News Sense User site
 ## This is the mid-course project of the Craft Academy bootcamp
 
-The objective was to create a news platform that allow for the staff to create, review and publish news, and for users to browse both local and international news. The user facing site also features live weather, ads, ability to become a subscriber to access more content, choosing between english and swedish UI language and browsing news by categories such as "economy" and "latest news".
+The objective was to create a news platform that allow for the staff to create, review and publish news, and for users to browse both local and international news, as well as a mobile version of the user client.
+
+All clients make use of roles (journalist, editor, regular user, subscriber) to authorise users on different levels.
+
+The user facing site also features 
+* automatic position detection
+* live local weather
+* ads 
+* ability to become a subscriber to access more content
+* automatic browser language detection (eng / swe)
+* ability to choose between english and swedish UI language
+* browsing news by categories such as "economy" and "latest news".
 
 Visit the [live website](http://dailynewssense.netlify.app) or clone the repo to see the app in action.
 
